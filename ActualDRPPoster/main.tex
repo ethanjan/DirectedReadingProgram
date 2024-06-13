@@ -1,0 +1,237 @@
+\documentclass[20pt,,margin=1in,innermargin=-4.5in,blockverticalspace=-0.25in]{tikzposter}
+\geometry{paperwidth=43in,paperheight=32.5in}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{mathrsfs}
+\usepackage{graphicx}
+\usepackage{adjustbox}
+\usepackage{enumitem}
+\usepackage{wrapfig}
+\usepackage{SUtheme}
+\usepackage{comment}
+\usepackage{mwe} % for placeholder images
+\usepackage{tikz}
+% set theme parameters
+\tikzposterlatexaffectionproofoff
+\usetheme{SUTheme}
+\usecolorstyle{SUStyle}
+\usetitlestyle{Filled}
+
+\usepackage[scaled]{helvet}
+\renewcommand\familydefault{\sfdefault}
+\usepackage[T1]{fontenc}
+
+
+\title{A Symmetry Problem}
+\author{Ethan Martirosyan and Yingpeng He \, Mentor: Jihye Lee}
+\institute{University of California Santa Barbara}
+\titlegraphic{\includegraphics[width=0.06\textwidth]{logo.png}}
+
+% begin document
+\begin{document}
+\maketitle
+\centering
+
+\begin{columns}
+    \column{0.32}
+    \block{Serrin's Overdetermined Problem}{
+                  Let us consider the following problem. Let $\Omega \subseteq \mathbb{R}^n$ be a domain that is bounded, open, and connected. Furthermore, suppose that the boundary $\partial{\Omega}$ is smooth. Let $u: \Omega \rightarrow \mathbb{R}$ be a $C^2$ function that satisfies the following conditions: $\Delta u = -1$ in $\Omega$ and $u=0$ and $\frac{\partial{u}}{\partial{\nu}} = c$ on $\partial{\Omega}$ for some constant $c$ and $\nu$ is the outward normal vector to $\partial{\Omega}$. Then, $\Omega$ must be a ball. Furthermore, we know that $u(x) = (b^2-r^2)/2n$, where $b$ is the ball's radius and $r$ is the distance to its center.
+                  \\
+    }
+    \block{First Proof}{
+     The first proof we present is from Professor James Serrin himself [3].
+    This proof utilizes the \textbf{moving plane method}. Let $T_0$ be a $n-1$ dimensional hyperplane in $\mathbb{R}^n$ that does not intersect the domain $\Omega$. We begin to move this plane normal to itself until it intersects $\Omega$. When this occurs, the new plane $T$ splits $\Omega$ into two parts. The part of $\Omega$ that lies on the same side of $T$ as our initial plane $T_0$ is denoted by $\Sigma(T)$. We reflect $\Sigma(T)$ in $T$ to obtain $\Sigma^\prime := \Sigma^\prime(T)$. As $T$ moves through $\Omega$, $\Sigma^\prime$ will remain in $\Omega$ until it becomes internally tangent to $\Omega$ at a point $P$ (case $i$) or $T$ becomes orthogonal to $\Omega$ at some point $Q$ (case $ii$). When either of these occurs, we stop moving the plane $T$, and we denote the resulting plane by $T^\prime$. We claim that $\Omega$ is symmetric about $T^\prime$. Showing this would prove the theorem. To see how, we recall that the plane $T_0$ was chosen arbitrarily. If $\Omega$ is symmetric about $T^\prime$, then $\Omega$ is symmetric in all possible directions. Since $\Omega$ is simply connected and has this strong symmetry property, it must be a ball.  
+\\
+\\
+\begin{center}
+
+
+
+
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1.6,xscale=1.6]
+%uncomment if require: \path (0,571); %set diagram left start at 0, and has height of 571
+
+%Shape: Polygon Curved [id:ds5706838743203553]
+\draw   (45,134) .. controls (125,120) and (96,266) .. (131,271) .. controls (166,276) and (189.5,110) .. (245.5,149) .. controls (301.5,188) and (165,468) .. (127,467) .. controls (89,466) and (-35,148) .. (45,134) -- cycle ;
+%Straight Lines [id:da32245607071165727]
+\draw    (20.5,365) -- (253.5,365) ;
+%Shape: Polygon Curved [id:ds09219005382763679]
+\draw   (131,271) .. controls (148,271) and (202.13,366.75) .. (201.5,366) .. controls (200.88,365.25) and (68,366.75) .. (63.88,366) .. controls (59.75,365.25) and (114,271) .. (131,271) -- cycle ;
+%Straight Lines [id:da8205571992315139]
+\draw    (21.5,491) -- (259.5,491) ;
+%Shape: Polygon Curved [id:ds6503069563047057]
+\draw   (497.5,135) .. controls (520.5,136) and (581.5,203) .. (607.5,256) .. controls (633.5,309) and (553.5,517) .. (496.5,517) .. controls (439.5,517) and (369,311) .. (373.5,261) .. controls (378,211) and (474.5,134) .. (497.5,135) -- cycle ;
+%Straight Lines [id:da32516902000919035]
+\draw    (337.5,271) -- (633.5,271) ;
+%Straight Lines [id:da6980504582735876]
+\draw    (333,106) -- (629,106) ;
+%Shape: Polygon Curved [id:ds3409580382825572]
+\draw   (374.5,271) .. controls (384.5,273) and (595.5,272) .. (610.5,272) .. controls (625.5,272) and (554.5,408) .. (498.5,410) .. controls (442.5,412) and (364.5,269) .. (374.5,271) -- cycle ;
+%Straight Lines [id:da22457687318989672]
+\draw    (205.13,487.5) -- (204.89,457.5) ;
+\draw [shift={(204.88,455.5)}, rotate = 89.55] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da3600925863165976]
+\draw    (369.13,112) -- (368.9,133.5) ;
+\draw [shift={(368.88,135.5)}, rotate = 270.61] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da304780204268821]
+\draw    (373.5,261) -- (382.5,261) ;
+%Straight Lines [id:da6856805121859137]
+\draw    (382.5,261) -- (382.5,272) ;
+
+% Text Node
+\draw (273,483.4) node [anchor=north west][inner sep=0.75pt]    {$T_{0}$};
+% Text Node
+\draw (269,355.4) node [anchor=north west][inner sep=0.75pt]    {$T^{\prime }$};
+% Text Node
+\draw (130,241.4) node [anchor=north west][inner sep=0.75pt]    {$P$};
+% Text Node
+\draw (126,315.4) node [anchor=north west][inner sep=0.75pt]    {$\Sigma ^{\prime }$};
+% Text Node
+\draw (109,393.4) node [anchor=north west][inner sep=0.75pt]    {$\Sigma \left( T^{\prime }\right)$};
+% Text Node
+\draw (58,211.4) node [anchor=north west][inner sep=0.75pt]    {$\Omega $};
+% Text Node
+\draw (351,235.4) node [anchor=north west][inner sep=0.75pt]    {$Q$};
+% Text Node
+\draw (313,262.4) node [anchor=north west][inner sep=0.75pt]    {$T^{\prime }$};
+% Text Node
+\draw (305,98.4) node [anchor=north west][inner sep=0.75pt]    {$T_{0}$};
+% Text Node
+\draw (487,313.4) node [anchor=north west][inner sep=0.75pt]    {$\Sigma ^{\prime }$};
+% Text Node
+\draw (477,207.4) node [anchor=north west][inner sep=0.75pt]    {$\Sigma \left( T^{\prime }\right)$};
+% Text Node
+\draw (493,440.4) node [anchor=north west][inner sep=0.75pt]    {$\Omega $};
+% Text Node
+\draw (130,42) node [anchor=north west][inner sep=0.75pt]   [align=left] {case i};
+% Text Node
+\draw (477,34) node [anchor=north west][inner sep=0.75pt]   [align=left] {case ii};
+
+
+\end{tikzpicture}
+\end{center}
+    To prove this, we introduce the function $v: \Sigma^\prime \rightarrow \mathbb{R}$ defined by $v(x) = u(x^\prime)$ for $x \in \Sigma^\prime$, where $x^\prime$ is the reflection of $x$ across $T^\prime$. By the maximum principle, we deduce that $u - v > 0$ or $u-v = 0$ in $\Sigma^\prime$. For the sake of contradiction, suppose that $u-v > 0$.  If $\Sigma^\prime$ is internally tangent to $\Omega$ at some point $P$, then we may appeal to the boundary point maximum principle to deduce that $\frac{\partial}{\partial{\nu}}(u-v) > 0$ at $P$ [1]. However, we know that $\partial{u}/\partial{\nu} = \partial{v}/\partial{\nu} = c$. Thus we have reached a contradiction. If $T^\prime$ is orthogonal to the boundary of $\Omega$ at some point $Q$, then we show that $u$ and $v$ have the same first and second derivatives at $Q$. Using a modified version of the boundary point maximum principle, we can also show that $\frac{\partial}{\partial{s}} (u-v) > 0 \text{ or } \frac{\partial^2}{\partial^2{s}}(u-v) > 0$ for any direction $s$ that enters $\Sigma^\prime$ non-tangentially at $Q$. However, this directly contradicts the fact that $u$ and $v$ have the same first and second derivatives at $Q$. We may thus conclude that $u=v$ and that $\Omega$ is symmetric about $T^\prime$.
+}
+
+
+    \column{0.36}
+    \block{Second Proof}{
+        The second proof we present is from Weinberger [2]. To start, we first compute
+\[
+\Delta\bigg(r \frac{\partial{u}}{\partial{r}}\bigg) = r \frac{\partial}{\partial{r}} (\Delta u) + 2\Delta u = -2,
+\] where $r$ is the distance to the origin. Using this and the fact that $\Delta u = -1$, we obtain
+\[
+\int_\Omega \bigg[ 2u - r\frac{\partial{u}}{\partial{r}}\bigg] dx = \int_\Omega \bigg[ -u \Delta \bigg(r \frac{\partial{u}}{\partial{r}} \bigg) + r \frac{\partial{u}}{\partial{r}} \Delta u \bigg] dx
+\]
+    Using Green's identity yields
+\[
+\int_\Omega \bigg[ -u \Delta \bigg(r \frac{\partial{u}}{\partial{r}} \bigg) + r \frac{\partial{u}}{\partial{r}} \Delta u \bigg] dx = \int_{\partial{\Omega}} \bigg[ - u \frac{\partial}{\partial{\nu}}\bigg(r\frac{\partial{u}}{\partial{r}}\bigg)+ r \frac{\partial{u}}{\partial{r}}\frac{\partial{u}}{\partial{\nu}}\bigg] dS
+\] By assumption, we have $u = 0$ on $\partial{\Omega}$. Thus, we find that
+\[
+\int_{\partial{\Omega}} \bigg[ - u \frac{\partial}{\partial{\nu}}\bigg(r\frac{\partial{u}}{\partial{r}}\bigg)+ r \frac{\partial{u}}{\partial{r}}\frac{\partial{u}}{\partial{\nu}}\bigg] dS =  \int_{\partial{\Omega}} r \frac{\partial{r}}{\partial{\nu}} \bigg(\frac{\partial{u}}{\partial{\nu}}\bigg)^2 dS
+\] By assumption, we know that $\partial{u}/\partial{\nu} = c$ on $\partial{\Omega}$. Thus, we find that
+\[
+\int_{\partial{\Omega}} r \frac{\partial{r}}{\partial{\nu}} \bigg(\frac{\partial{u}}{\partial{\nu}}\bigg)^2 dS = c^2 \int_{\partial{\Omega}} r\frac{\partial{r}}{\partial{\nu}} dS = c^2 n \int_{\Omega} dx =  nc^2 V
+\] where $V$ is the volume of $\Omega$. Green's theorem also implies
+\[
+\int_{\Omega} r \frac{\partial{u}}{\partial{r}} dx = -n \int_{\Omega} u dx
+\] so that substitution yields
+\[
+(n+2) \int_\Omega u d x = nc^2V
+\] However, we also note that
+\[
+1 = (\Delta u)^2 \leq n \sum_{i=1}^n u_{ii}^2 \leq n \sum_{i,j} u_{ij}^2
+\] by the Cauchy-Schwarz inequality. From this, we deduce that
+\[
+\Delta\bigg( \vert \nabla u\vert^2 + \frac{2}{n}u\bigg) = 2\sum_{i,j} u_{ij}^2 - \frac{2}{n} \geq 0
+\] Using this and the fact that $\vert \nabla u \vert^2 + (2/n)u = c^2$ on $\partial{\Omega}$, we may appeal to the maximum principle to deduce that $\vert \nabla u \vert + (2/n)u < c^2$ in $\Omega$ or $\vert \nabla u \vert + (2/n)u = c^2$ in $\Omega$. If the inequality held, then we could integrate over $\Omega$ to deduce that
+\[
+(n+2)\int_\Omega u dx < nc^2V
+\] This contradiction informs us that $\vert \nabla u \vert^2 + (2/n)u = c^2$ in $\Omega$ so that
+\[
+\Delta\bigg( \vert \nabla u\vert^2 + \frac{2}{n}u\bigg) = 2\sum_{i,j} u_{ij}^2 - \frac{2}{n} = 0
+\]
+and
+\[
+1 = n \sum_{i=1}^n u_{ii}^2 = \sum_{i,j} u_{ij}^2
+\] which implies that $u_{ij} = -\delta_{ij}/n$. Solving the corresponding partial differential equations yields
+\[
+u = \frac{1}{2n}(B - r^2)
+\] where $B$ is a constant. Since $u = 0$ on $\partial{\Omega}$, $B$ is positive and $\Omega$ is a ball of radius $B^{1/2}$.
+
+    }
+
+    \column{0.32}
+    \block{Applications}{
+       This theorem is significant because it allows us to determine the shape of $\Omega$ from properties of $u$. It also has many applications in physics. For example, we may consider an incompressible viscous fluid moving through a straight pipe of cross sectional form $\Omega$. If we fix a rectangular coordinate system with the $z$-axis directed along the pipe, then the velocity $u$ depends only on $x$ and $y$, and it satisfies the differential equation $\Delta u = -A$ for some constant $A$. Furthermore, because the fluid is viscous, we know that $u = 0$ on $\partial{\Omega}$; that is, there is no movement on the boundary of the pipe. Finally, we note that $\mu\partial{u}/\partial{\nu}$ is the tangential stress on the pipe wall, where $\mu$ is the viscosity constant. If the tangential stress is constant, then we may apply the above theorem to conclude that $\Omega$ is a circular cross section.
+     \\
+    }
+   
+    \block{Further Results}{
+    A similar result was proved by Wolfgang Reichel [4]. Let $\Omega_0$ and $\Omega_1$ be smooth domains in $\mathbb{R}^n$ and let $\Omega = \Omega_0 \setminus \overline{\Omega}_1$ be connected. Suppose that $f \in C^1$ is a function satisfying $\Delta u + f(u, \vert \nabla u\vert) = 0$ in $\overline{\Omega}$, $0 < u < a$ in $\Omega$, $u = 0$ on $\partial{\Omega_0}$, $u = a$ on $\partial{\Omega_1}$, and $\partial{u}/{\partial{\nu}} = c_i$ on $\partial{\Omega_i}$. Then, we conclude that $\Omega$ is an annulus and $u$ is radially symmetric and decreasing in $r$.
+   
+\begin{center}
+
+
+
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1.6,xscale=1.6]
+%uncomment if require: \path (0,472); %set diagram left start at 0, and has height of 472
+
+%Shape: Ellipse [id:dp8921067574796464] 
+\draw  [color={rgb, 255:red, 0; green, 0; blue, 0 }  ,draw opacity=1 ][fill={rgb, 255:red, 200; green, 200; blue, 200 }  ,fill opacity=1 ] (387.5,240) .. controls (387.5,166.55) and (447.04,107) .. (520.5,107) .. controls (593.95,107) and (653.5,166.55) .. (653.5,240) .. controls (653.5,313.45) and (593.95,373) .. (520.5,373) .. controls (447.04,373) and (387.5,313.45) .. (387.5,240) -- cycle ;
+%Shape: Circle [id:dp12450006417670667] 
+\draw  [fill={rgb, 255:red, 255; green, 255; blue, 255 }  ,fill opacity=1 ] (436.4,240) .. controls (436.4,193.56) and (474.05,155.91) .. (520.5,155.91) .. controls (566.94,155.91) and (604.59,193.56) .. (604.59,240) .. controls (604.59,286.44) and (566.94,324.09) .. (520.5,324.09) .. controls (474.05,324.09) and (436.4,286.44) .. (436.4,240) -- cycle ;
+%Shape: Polygon Curved [id:ds7197742334309463] 
+\draw  [fill={rgb, 255:red, 200; green, 200; blue, 200 }  ,fill opacity=1 ] (43.53,167.84) .. controls (70.9,153.99) and (168.08,40.4) .. (241.99,98.58) .. controls (315.89,156.76) and (311.79,307.75) .. (214.61,339.61) .. controls (117.44,371.47) and (70.9,292.51) .. (43.53,250.96) .. controls (16.16,209.4) and (16.16,181.69) .. (43.53,167.84) -- cycle ;
+%Shape: Polygon Curved [id:ds532501596145811] 
+\draw  [fill={rgb, 255:red, 255; green, 255; blue, 255 }  ,fill opacity=1 ] (131.33,192.32) .. controls (158.71,178.46) and (281.88,164.61) .. (254.51,192.32) .. controls (227.14,220.02) and (227.14,233.87) .. (254.51,275.43) .. controls (281.88,316.99) and (158.71,316.99) .. (131.33,275.43) .. controls (103.96,233.87) and (103.96,206.17) .. (131.33,192.32) -- cycle ;
+%Right Arrow [id:dp5541780789011324] 
+\draw   (306.97,208.85) -- (346.66,208.44) -- (346.55,197.95) -- (373.22,218.66) -- (346.98,239.93) -- (346.87,229.43) -- (307.19,229.84) -- cycle ;
+
+% Text Node
+\draw (394.51,108.5) node [anchor=north west][inner sep=0.75pt]  [font=\normalsize]  {$\Omega _{0}$};
+% Text Node
+\draw (445.63,145.87) node [anchor=north west][inner sep=0.75pt]  [font=\normalsize]  {$\Omega $};
+% Text Node
+\draw (508.71,234.91) node [anchor=north west][inner sep=0.75pt]  [font=\normalsize]  {$\Omega _{1}$};
+% Text Node
+\draw (112.97,152.14) node [anchor=north west][inner sep=0.75pt]  [font=\normalsize]  {$\Omega $};
+% Text Node
+\draw (47.48,107.18) node [anchor=north west][inner sep=0.75pt]  [font=\normalsize]  {$\Omega _{0}$};
+% Text Node
+\draw (178.71,233.91) node [anchor=north west][inner sep=0.75pt]  [font=\normalsize]  {$\Omega _{1}$};
+
+
+\end{tikzpicture}
+\end{center}
+The above picture demonstrates the theorem. On the left-hand side, we see our hypotheses. On the right-hand side, we see the conclusion.
+\\
+    }    
+   
+    \block{Acknowledgements}{
+    We would like to thank Jihye Lee for mentoring us. Furthermore, we express gratitude to the 2024 UCSB Directed Reading Program for giving us this opportunity.
+    \\
+    }
+ 
+    \block{References}{
+    \footnotesize
+   
+[1] Hans Weingberger. Maximum Principles in Differential Equations. 1984.
+
+[2] Hans Weingberger. Remark on the Preceding Paper of Serrin. \emph{Arch. Rational Mech. Anal.} 1971.
+
+[3] James Serrin. A Symmetry Problem in Potential Theory. \emph{Arch. Rational Mech. Anal.} 1971.
+
+[4] Wolfgang Reichel. Radial Symmetry by Moving Planes for Semilinear Elliptic BVPs on annuli and other non-convex domains. \emph{Elliptic and parabolic problems} 1995.
+
+
+    }
+\end{columns}
+\end{document}

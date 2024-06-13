@@ -1,0 +1,236 @@
+\documentclass[12pt]{article}
+ 
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage{mathtools}
+\DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
+%\usepackage{mathptmx}
+\usepackage{accents}
+\usepackage{comment}
+\usepackage{graphicx}
+\usepackage{IEEEtrantools}
+ \usepackage{float}
+ 
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand*\conj[1]{\bar{#1}}
+\newcommand*\mean[1]{\bar{#1}}
+\newcommand\widebar[1]{\mathop{\overline{#1}}}
+
+
+\newcommand{\cc}{{\mathbb C}}
+\newcommand{\rr}{{\mathbb R}}
+\newcommand{\qq}{{\mathbb Q}}
+\newcommand{\nn}{\mathbb N}
+\newcommand{\zz}{\mathbb Z}
+\newcommand{\aaa}{{\mathcal A}}
+\newcommand{\bbb}{{\mathcal B}}
+\newcommand{\rrr}{{\mathcal R}}
+\newcommand{\fff}{{\mathcal F}}
+\newcommand{\ppp}{{\mathcal P}}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\vv}{{\mathbf v}}
+\newcommand{\ww}{{\mathbf w}}
+\newcommand{\xx}{{\mathbf x}}
+\newcommand{\ds}{\displaystyle}
+\newcommand{\Om}{\Omega}
+\newcommand{\dd}{\mathop{}\,\mathrm{d}}
+\newcommand{\ud}{\, \mathrm{d}}
+\newcommand{\seq}[1]{\left\{#1\right\}_{n=1}^\infty}
+\newcommand{\isp}[1]{\quad\text{#1}\quad}
+
+\DeclareMathOperator{\imag}{Im}
+\DeclareMathOperator{\re}{Re}
+\DeclareMathOperator{\diam}{diam}
+\DeclareMathOperator{\Tr}{Tr}
+
+\def\upint{\mathchoice%
+    {\mkern13mu\overline{\vphantom{\intop}\mkern7mu}\mkern-20mu}%
+    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
+    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
+    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
+  \int}
+\def\lowint{\mkern3mu\underline{\vphantom{\intop}\mkern7mu}\mkern-10mu\int}
+
+\newtheorem{lemma}{Lemma}
+
+\begin{document}
+ 
+% --------------------------------------------------------------
+%                         Start here
+% --------------------------------------------------------------
+\title{DRP Report}
+\author{Ethan Martirosyan}
+\date{\today}
+\maketitle
+\hbadness=99999
+\hfuzz=50pt
+\section*{Winter Break}
+First, let us examine the following theorem that Professor James Serrin proved. We suppose that $\Omega$ is a bounded open connected domain in $\R^n$ whose boundary $\partial{\Omega}$ is smooth. Furthermore, we assume that there exists some function $u: \R^n \rightarrow \R$ such that
+\[
+\nabla u = -1
+\] in $\Omega$. Furthermore, we suppose that $u=0$ and 
+\[
+\frac{\partial{u}}{\partial{n}} = \text{constant}
+\] on $\partial{\Omega}$. We claim that $\Omega$ is a ball and that $u(x) = (b^2-r^2)/2n$, where $b$ is the ball's radius and $r$ is the distance from the ball's center.
+\section*{Week 1}
+To prove this, let us suppose that $T_0$ is an $n-1$ dimensional hyperplane in $\R^n$ that does not intersect the domain $\Omega$. We suppose that this plane is moved normal to itself until it begins to intersect the domain $\Omega$. Let us denote this new plane by $T$. At this point, the plane $T$ will separate $\Omega$ into $2$ subsets. Let us denote the subset that is on the same side of $T$ as $T_0$ by $\Sigma(T)$, and let its reflection across $T$ be denoted by $\Sigma^\prime(T)$. Notice that $\Sigma^\prime(T)$ remains inside $\Omega$ until $\Sigma^\prime(T)$ becomes internally tangent to $\Omega$ or $T$ is orthogonal to the boundary of $\Omega$. When the plane $T$ attains either of these two positions, we may denote it by $T^\prime$. Next, it can be shown that reflection across $T^\prime$ preserves $\Omega$. If this is true, then $\Omega$ must be a ball because it is simply connected and symmetrical in every direction and $u$ must be of the form $(b^2-r^2)/2n$ \cite{serrin71}.
+\section*{Week 2}
+To prove this, let us define the function $v$ in $\Sigma^\prime$ as follows:
+\[
+v(x) = u(x^\prime)
+\] where $x \in \Sigma^\prime$ and $x^\prime$ is obtained by reflecting $x$ across $T^\prime$. Notice that 
+\[
+\Delta v = -1
+\] in $\Sigma^\prime$. Furthermore, we have
+\[
+v = u 
+\] on $\partial{\Sigma^\prime} \cap T^\prime$ and
+\[
+v = 0, \; \frac{\partial{v}}{\partial{n}} = \text{constant} 
+\] on $\partial{\Sigma^\prime} \cap \text{Comp}(T^\prime)$. Let us consider the function $u-v$ in $\Sigma^\prime$. We have
+\[
+\Delta(u-v) = 0
+\] in $\Sigma^\prime$. Furthermore, we know that
+\[
+u - v = 0
+\] on $\partial{\Sigma^\prime} \cap T^\prime$ and
+\[
+ u - v \geq 0 
+\] on $\partial{\Sigma^\prime} \cap \text{Comp}(T^\prime)$. 
+\section*{Week 3}
+Applying the strong version of the maximum principle, we find that either $u-v > 0$ or $u-v = 0$ in $\Sigma^\prime$. If the latter holds, then it is evident that $\Omega$ is symmetric about the plane $T^\prime$. Thus, we must prove that the former case cannot happen. Before we prove this, we should discuss the Hopf lemma. The statement of this lemma is as follows: Let $\Omega$ is a bounded domain in $\R^n$ with smooth boundary. Let $f$ be a real-valued function continuous on the closure of $\Omega$ and harmonic on $\Omega$. If $x$ is a boundary point such that $f(x) > f(y)$ for all $y \in \Omega$ sufficiently close to $x$, then the normal derivative of $f$ at $x$ is strictly positive.
+\section*{Week 4}
+To finish proving the theorem, we must show that $u-v > 0$ is false. First, suppose that $\Sigma^\prime$ is internally tangent to the boundary of $\Omega$ at some point  $P$ not on $T^\prime$. Then $u - v = 0$ at $P$. Using Hopf's lemma, we may deduce that
+\[
+\frac{\partial}{\partial{n}}(u-v) > 0
+\] at $P$. This contradicts the fact that $\partial{u}/\partial{n} = \partial{v}/\partial{n} = \text{constant}$ at $P$. If $T$ is orthogonal to the boundary of $\Omega$ at some point $Q$, Hopf's lemma does not apply. Thus, we will show that all the second derivatives of $u-v$ are $0$ at $Q$. By our hypothesis, the bounder of $\Omega$ is of class $C^2$. We may consider a rectangular coordinate frame with origin at $Q$. Furthermore, we may suppose that the $x_n$ axis is directed along the inward normal to $\partial{\Omega}$ at $Q$ and that the $x_1$ axis is normal to $T^\prime$. With this coordinate system, we may represent the boundary of $\Omega$ locally by the equation
+\[
+x_n = \phi(x_1,\ldots,x_{n-1})
+\] where $\phi \in C^2$. Since $u$ is twice continuously differentiable the condition $u = 0$ on $\Omega$ can be written as follows:
+\[
+u(x_1,\ldots,x_{n-1},\phi) \equiv 0
+\] Then, the boundary condition $\partial{u}/\partial{n} = c$ on $\partial{\Omega}$ may be expressed as
+\[
+\frac{\partial{u}}{\partial{x_n}} - \sum_{k=1}^{n-1} \frac{\partial{u}}{\partial{x_k}}\frac{\partial{\phi}}{\partial{x_k}} = c \Bigg\{ 1 + \sum_{k=1}^{n-1} \bigg(\frac{\partial{\phi}}{\partial{x_k}}\bigg)^2\Bigg\}^{1/2}
+\] We may introduce some simple notation:
+\[
+u_i = \frac{\partial{u}}{\partial{x_i}}
+\] for every $i$. Differentiating $u = 0$ with respect to $x_i$, we find that
+\[
+u_i + u_n \phi_i = 0
+\] If we evaluate this at $Q$ where $\phi = 0$, we find
+\[
+u_i = 0
+\] and 
+\[
+u_n = c
+\] If we differentiate with respect to $x_j$, we find that
+\[
+u_{ij} + c\phi_{ij} = 0
+\] at $Q$. Furthermore, we obtain
+\[
+u_{ni} = 0
+\] at $Q$. Since we have 
+\[
+u_{nn} = - \sum_{i=1}^{n-1} u_{ii} - 1 = c \Delta \phi - 1
+\] at $Q$, we have found all the first and second derivatives of $u$ at $Q$. We also know that
+\[
+\phi_{1l} = 0
+\] at $Q$ for $2 \leq l \leq n-1$. From all of this information and the fact that
+\[
+v(x_1,x_2,\ldots,x_n) = u(-x_1,x_2,\ldots,x_n)
+\] we may deduce that all the second derivatives of $u-v$ are $0$ at $Q$.
+\section*{Week 5}
+Next, we will prove the following lemma:
+\begin{lemma}
+Let $D^*$ be a domain with $C^2$ boundary and let $T$ be a plane containing the normal to $\partial{D^*}$ at some point $Q$. Let $D$ then denote the portion of $D^*$ lying on some particular side of $T$. Suppose that $w$ is of class $C^2$ in the closure of $D$ and satisfies $\Delta w \leq 0$ in $D$, while also $w \geq 0$ in $D$ and $w = 0$ at $Q$. Let $\vec{s}$ be any direction at $Q$ which enters $D$ non-tangentially. Then either
+\[
+\frac{\partial{w}}{\partial{s}} > 0
+\] or 
+\[
+\frac{\partial^2{w}}{\partial{s}^2} > 0
+\] at $Q$ unless $w = 0$.
+\end{lemma} Let us apply this lemma to the function $w = u - v$ in $\Sigma^\prime$. Since $w > 0$ there and $w = 0$ at $Q$, this yields
+\[
+\frac{\partial{(u-v)}}{\partial{s}} > 0
+\] or
+\[
+\frac{\partial^2{(u-v)}}{\partial{s}^2} > 0
+\] which contradicts the fact that both $u$ and $v$ have the same first and second partial derivatives at $Q$. This proves the theorem.
+\section*{Week 6}
+We will now attempt to prove this theorem. We will let $K_1$ be a ball internally tangent to $D^*$ at $Q$ and which only intersects the boundary of $D^*$ at $Q$. Next, we will let $K_2$ be a ball with center at $Q$ and radius $\frac{1}{2}r_1$, where $r_1$ is the radius of $K_1$. Let $K^\prime = K_1 \cap K_2 \cap D$. We may define the following function:
+\[
+z = z(x) = x_1(e^{-\alpha r^2} - e^{-\alpha r_1^2})
+\] where $\alpha$ is a positive constant. We assume that the origin is the center of $K_1$, that $T$ is the plane $x_1 = 0$, and that $D$ is where $x_1 > 0$. Notice that $z > 0$ in $K^\prime$ and $z = 0$ in $\partial{K_1} \cup T$. We then compute the laplacian of $z$ as follows:
+\[
+\Delta z = \sum_{i=1}^n \frac{\partial^2{z}}{\partial{x_i}^2} = 2\alpha x_1 e^{-ar^2} (2\alpha r^2 - (n+2))
+\] If we choose $\alpha$ to be sufficiently large, then we can ensure that $\Delta z > 0$ in $K^\prime$.
+\section*{Week 7}
+We continue the proof from the week before. We may suppose $w$ is not equal to zero at all points in $D$. By the maximum principle, then, we know that $w > 0$ in $D$. From this, we find that $w \geq \varepsilon x_1$ on $\partial{K^\prime} \cap \partial{K_2}$, and we know that $w \geq 0$ on $\partial{K^\prime} \cap \partial{K_1}$ and $\partial{K^\prime} \cap \partial{T}$ by our assumptions on $W$. It is also evident that $z \leq x_1$ on $\partial{K^\prime} \cap \partial{K_2}$. We find that $w - \varepsilon z$ is non-negative on $\partial{K^\prime}$ and is zero at $Q$. Furthermore, we have $\Delta(w - \varepsilon z) = \Delta w - \varepsilon \Delta z < 0$ in $K^\prime$. The maximum principle informs us that $w - \varepsilon z > 0$ in $K^\prime$. Therefore, we know that
+\[
+\frac{\partial{(w- \varepsilon z)}}{\partial{s}} > 0
+\] or
+\[
+\frac{\partial^2(w-\varepsilon z)}{\partial{s}^2} \geq 0
+\] We compute
+\[
+\frac{\partial{z}}{\partial{s}} = 0
+\] and
+\[
+\frac{\partial^2{z}}{\partial{s}^2} > 0
+\] at $Q$, which completes the proof of the theorem.
+\subsection*{Week 8}
+Next, we shall go over another proof of the same theorem. First, we compute
+\[
+\Delta\bigg(r \frac{\partial{u}}{\partial{r}}\bigg) = r \frac{\partial}{\partial{r}}(\Delta u) + 2\Delta u = -2
+\] Notice that
+\[
+\int_\Omega \bigg[ 2u - r \frac{\partial{u}}{\partial{r}}\bigg] dx = \int_\Omega \bigg[-u \Delta\bigg(r \frac{\partial{u}}{\partial{r}}\bigg) + r \frac{\partial{u}}{\partial{r}} \Delta u \bigg] dx
+\] Appealing to Green's identity, we have
+\[
+\int_{\partial{\Omega}} \bigg[ -u \frac{\partial}{\partial{n}}\bigg( r \frac{\partial{u}}{\partial{r}} \bigg) + r \frac{\partial{u}}{\partial{r}} \frac{\partial{u}}{\partial{n}} \bigg]dS
+= \int_{\partial{\Omega}} r\frac{\partial{r}}{\partial{n}} \bigg (\frac{\partial{u}}{\partial{n}}\bigg)^2 dS = n c^2 V
+\] where $V$ is the volume of $\Omega$. By Green's theorem again, we have
+\[
+\int_{\Omega} r \frac{\partial{u}}{\partial{r}} dx = \int_{\Omega} \nabla (1/2)r^2 \cdot \nabla u dx = - n \int_\Omega u dx
+\] so that
+\[
+(n+2) \int_\Omega u dx = nc^2 V
+\]
+\section*{Week 9}
+ By the Cauchy-Schwarz Inequality, we have 
+ \[
+ 1 = (\Delta u)^2 \leq n \sum_{i=1}^n u_{ii}^2 \leq n \sum_{i,j = 1}^n u_{ij}^2
+ \] Using this, we may deduce that
+ \[
+ \Delta \bigg( \vert \nabla u \vert^2 + \frac{2}{n}u \bigg) = 2 \sum_{i,j=1}^n u_{ij}^2 - \frac{2}{n} \geq 0
+ \] We know that 
+ \[
+ \vert \nabla u \vert^2 + \frac{2}{n}u = c^2
+ \] on $\partial{\Omega}$, so the strong maximum principle informs us that
+ \[
+ \vert \nabla u \vert ^2 + \frac{2}{n} u < c^2 
+ \] in $\Omega$ or 
+ \[
+ \vert \nabla u \vert^2 + \frac{2}{n} u \equiv c^2
+ \] in $\Omega$. The first case cannot happen because it would contradict the equation $(n+2) \int_\Omega u dx = nc^2 V$. Thus 
+ \[
+ \vert \nabla u \vert ^2 + \frac{2}{n}u
+ \] must be constant in $\Omega$.
+ \section*{Week 10}
+ This means that its Laplacian must vanish, so that
+ \[
+1 = (\Delta u)^2 \leq n \sum_{i=1}^n u_{ii}^2 \leq n \sum_{i,j = 1}^n u_{ij}^2
+ \] This equation coupled with the fact that \(\Delta u = -1\) implies that
+ \[
+ u_{ij} = -\frac{\delta_{ij}}{m}
+ \] Thus, we may write
+ \[
+ u = \frac{1}{2n}(A - r^2)
+ \] for some constant $A$. Since $u = 0$ on $\partial{\Omega}$, we may deduce that $A$ is positive and that $\Omega$ is a ball \cite{weinberger71}. Also, this relies on \cite{weinberger84}.
+\bibliographystyle{plain}
+\bibliography{sample1} 
+\end{document} 
